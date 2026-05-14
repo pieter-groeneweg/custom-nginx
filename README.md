@@ -50,7 +50,7 @@ Run this sed string to safely scan and rewrite the menu description variable (mo
 cd /usr/share/webmin/custom-nginx/lang
 ```
 ```
-sed -i 's/^mod_desc=.*/mod_desc=Custom Nginx Server/g' *
+sed -i 's/^index_title=.*/index_title=Custom Nginx Server/g' *
 ```
 In /usr/share/webmin/custom-nginx/lang/en, replace
 ```
