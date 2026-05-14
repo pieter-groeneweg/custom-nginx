@@ -40,13 +40,13 @@ Update all file scripts to import the newly renamed library:
 sed -i 's/nginx-lib.pl/custom-nginx-lib.pl/g' *.cgi *.pl
 ```
 In /usr/share/webmin/custom-nginx/lang/en, replace
-
-```msg_reload=Notice: Changes may not apply until NginX is reloaded. <a href="reload.cgi?redir=/nginx/">Apply Changes</a>```
-
+```
+msg_reload=Notice: Changes may not apply until NginX is reloaded. <a href="reload.cgi?redir=/nginx/">Apply Changes</a>
+```
 with
-
-```msg_reload=Notice: Changes may not apply until NginX is reloaded. <a href="reload.cgi?redir=/custom-nginx/">Apply Changes</a>```
-
+```
+msg_reload=Notice: Changes may not apply until NginX is reloaded. <a href="reload.cgi?redir=/custom-nginx/">Apply Changes</a>
+```
 ## Move the Module Configuration Directory ##
 Webmin retains user configurations, permissions, and paths in /etc/webmin. Rename this directory to match your new module identifier:
 ```
