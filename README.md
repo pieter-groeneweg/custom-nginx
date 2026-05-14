@@ -47,14 +47,8 @@ with
 ```
 msg_reload=Notice: Changes may not apply until NginX is reloaded. <a href="reload.cgi?redir=/custom-nginx/">Apply Changes</a>
 ```
-## Move the Module Configuration Directory ##
-Webmin retains user configurations, permissions, and paths in /etc/webmin. Rename this directory to match your new module identifier:
-```
-cd /etc/webmin
-```
-```
-mv nginx custom-nginx
-```
+
+
 
 ## Update Permissions and Clear Module Cache ##
 Webmin caches installed modules and maps access permissions per user. You need to point access from nginx to custom-nginx. 
