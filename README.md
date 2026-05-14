@@ -39,6 +39,19 @@ Update all file scripts to import the newly renamed library:
 ```
 sed -i 's/nginx-lib.pl/custom-nginx-lib.pl/g' *.cgi *.pl
 ```
+To update menu display name, nano /usr/share/webmin/custom-nginx/module.info and change the desc variable to "Custom Nginx Server"
+```
+desc=Custom Nginx Server
+```
+Save and exit (Ctrl+O, Enter, Ctrl+X).
+
+Run this sed string to safely scan and rewrite the menu description variable (mod_desc) inside all language profile text files:
+```
+cd /usr/share/webmin/custom-nginx/lang
+```
+```
+sed -i 's/^mod_desc=.*/mod_desc=Custom Nginx Server/g' *
+```
 In /usr/share/webmin/custom-nginx/lang/en, replace
 ```
 msg_reload=Notice: Changes may not apply until NginX is reloaded. <a href="reload.cgi?redir=/nginx/">Apply Changes</a>
@@ -47,8 +60,6 @@ with
 ```
 msg_reload=Notice: Changes may not apply until NginX is reloaded. <a href="reload.cgi?redir=/custom-nginx/">Apply Changes</a>
 ```
-
-
 
 ## Update Permissions and Clear Module Cache ##
 Webmin caches installed modules and maps access permissions per user. You need to point access from nginx to custom-nginx. 
