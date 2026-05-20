@@ -6,7 +6,10 @@ https://www.justindhoffman.com/project/nginx-webmin-module
 
 To safely rename your custom, third-party nginx module on Debian so it does not conflict with Webmin’s native nginx module, execute the following commands in your server terminal, follow next steps.
 
-(If you already have the native nginx module installed. Remove first. Webmin->Webmin Configuration->Webmin Modules->Delete, Select the nginx module and Delete selected module (nginx).)
+(If you already have the native nginx module installed. Remove first. Webmin->Webmin Configuration->Webmin Modules->Delete, Select the nginx module and Delete selected module (nginx).) Then install v0.11, you may need to install a parser.
+```
+apt install libhtml-parser-perl
+```
 
 SSH into your server.
 
